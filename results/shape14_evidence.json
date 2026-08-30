@@ -1,0 +1,222 @@
+{
+  "device_limits": {
+    "device": "Apple M2",
+    "max_buffer_length_bytes": 4294967296,
+    "recommended_max_working_set_bytes": 5726633984
+  },
+  "official_interface": [
+    {
+      "dtype": "float32",
+      "required_input_bytes": 13107200000,
+      "required_input_gib": 12.20703125,
+      "error": "Invalid buffer size: 12.21 GiB",
+      "participant_forward_called": false
+    },
+    {
+      "dtype": "float16",
+      "required_input_bytes": 6553600000,
+      "required_input_gib": 6.103515625,
+      "error": "Invalid buffer size: 6.10 GiB",
+      "participant_forward_called": false
+    }
+  ],
+  "contiguous_fp16_batch_limit": {
+    "largest_batch_below_max_buffer_length": 20,
+    "batch_20_input_bytes": 4096000000,
+    "batch_21_input_bytes": 4300800000
+  },
+  "fused_attention_memory": [
+    {
+      "seq_len": 25000,
+      "latency_ms": 875.001667,
+      "peak_active_bytes": 204800000,
+      "dense_fp16_attention_bytes": 20000000000
+    },
+    {
+      "seq_len": 50000,
+      "latency_ms": 2552.965833,
+      "peak_active_bytes": 409600000,
+      "dense_fp16_attention_bytes": 80000000000
+    },
+    {
+      "seq_len": 100000,
+      "latency_ms": 11720.803291,
+      "peak_active_bytes": 819200000,
+      "dense_fp16_attention_bytes": 320000000000
+    }
+  ],
+  "exact_reference_validation": {
+    "largest_verified_seq_len": 6592,
+    "batch": 1,
+    "dtype": "float16",
+    "seeds": [1234, 1235, 1236],
+    "failed_elements_each": [0, 0, 0],
+    "first_infeasible_reference_seq_len": 6624,
+    "reference_boundary_note": "The explicit reference ceases to produce trustworthy output under MPS memory pressure at 6624; at 8192 its FP32 softmax conversion requests one 4.00 GiB buffer and is rejected."
+  },
+  "full_transformer": [
+    {
+      "batch": 1,
+      "seq_len": 100000,
+      "dtype": "float16",
+      "compiled": true,
+      "fused_qkv": true,
+      "latency_ms": 23944.928833,
+      "useful_tflops": 1.8157077142815161
+    },
+    {
+      "batch": 2,
+      "seq_len": 100000,
+      "dtype": "float16",
+      "latency_ms": 48390.020292,
+      "useful_tflops": 1.7969404326613916
+    },
+    {
+      "batch": 4,
+      "seq_len": 100000,
+      "dtype": "float16",
+      "latency_ms": 216089.165292,
+      "useful_tflops": 0.8047972593396767,
+      "note": "Direct execution completed but crossed a severe workspace/throughput cliff."
+    },
+    {
+      "logical_batch": 32,
+      "batch_chunk": 2,
+      "seq_len": 100000,
+      "dtype": "float16",
+      "latency_ms": 934622.944625,
+      "useful_tflops": 1.4885829114308964,
+      "peak_active_bytes": 5759610886,
+      "finite": true
+    }
+  ],
+  "estimated_fp32_mfu": null,
+  "estimated_fp32_mfu_note": "The historical Stage 2/3 stress runs retain FP16 storage/compute; the new Stage 4 run uses FP32 input/state with FP16 linear/attention compute, so useful TFLOP/s is reported but FP32 MFU is not treated as directly comparable.",
+  "stage1_official_monolithic_interface": {
+    "status": "FAIL before participant forward",
+    "source": "untouched challenge generate_random_case",
+    "command": ".venv/bin/python shape14_interface_probe.py",
+    "participant_forward_called": false,
+    "fp32_required_input_bytes": 13107200000,
+    "fp32_required_input_gib": 12.20703125,
+    "fp32_error": "Invalid buffer size: 12.21 GiB",
+    "fp16_required_input_bytes": 6553600000,
+    "fp16_required_input_gib": 6.103515625,
+    "fp16_error": "Invalid buffer size: 6.10 GiB"
+  },
+  "stage2_first_memory_efficient": {
+    "status": "PASS complete logical computation",
+    "implementation": "shape14_chunked_batch.py",
+    "command": ".venv/bin/python shape14_chunked_batch.py --batch 32 --batch-chunk 2 --seq-len 100000",
+    "logical_batch": 32,
+    "batch_chunk": 2,
+    "seq_len": 100000,
+    "latency_ms": 934622.944625,
+    "useful_tflops": 1.4885829114308964,
+    "peak_active_bytes": 5759610886,
+    "finite": true,
+    "note": "Historical computation-only batch-2 streaming result; preserved unchanged as the Stage 2 baseline."
+  },
+  "stage3_end_to_end_chunked": {
+    "status": "PASS complete exact-logical execution",
+    "implementation": "shape14_end_to_end.py",
+    "command": ".venv/bin/python shape14_end_to_end.py --batch 32 --batch-chunk 1 --seq-len 100000 --output-mode memmap --output results/raw/shape14_stage3_output_fp16.mmap --log results/shape14_stage3_final.json",
+    "logical_batch": 32,
+    "batch_chunk": 1,
+    "seq_len": 100000,
+    "d_model": 1024,
+    "heads": 16,
+    "layers": 2,
+    "ffn_dim": 1024,
+    "dtype": "float16",
+    "input_generation": "per-tile deterministic MLX random generation",
+    "sequence_execution": "forced-fused causal streaming/online-softmax attention",
+    "output_storage": "FP16 memmap, one completed batch tile at a time",
+    "latency_ms": 1185798.819958,
+    "model_latency_ms": 1118259.6797910002,
+    "input_generation_ms": 57555.551501,
+    "output_store_ms": 6800.275583,
+    "useful_tflops_end_to_end": 1.173271317683785,
+    "useful_tflops_model_only": 1.2441329765730473,
+    "peak_active_bytes": 2892411142,
+    "output_bytes": 6553600000,
+    "output_sha256": "3e546d303820ae396bf565a8e4f49f2fca72bb8f2f2cb196cafbb95cd647d2ee",
+    "finite": true,
+    "full_reference_comparison": "not attempted because the exact full reference input/intermediates do not fit; the same algorithm passes every reference-fit validation below",
+    "improvement_over_stage2": {
+      "latency_delta_ms": 251175.875333,
+      "latency_ratio": 1.2687456762938552,
+      "useful_tflops_delta": -0.3153115937471111,
+      "peak_active_bytes_delta": -2867199744,
+      "note": "End-to-end generation and memmap storage add overhead; active working memory is approximately halved."
+    }
+  },
+  "stage3_reference_fit_validation": [
+    {"batch": 4, "batch_chunk": 1, "seq_len": 1024, "seeds": [1234], "failed_elements": 0, "max_abs_error": 0.005859375, "correct": true},
+    {"batch": 8, "batch_chunk": 4, "seq_len": 2048, "seeds": [1234], "failed_elements": 0, "max_abs_error": 0.0078125, "correct": true},
+    {"batch": 32, "batch_chunk": 2, "seq_len": 4096, "seeds": [1234], "failed_elements": 0, "max_abs_error": 0.0078125, "correct": true},
+    {"batch": 1, "batch_chunk": 1, "seq_len": 6592, "seeds": [1234, 1235, 1236], "failed_elements_each": [0, 0, 0], "max_abs_error": 0.005859375, "correct": true}
+  ],
+  "stage3_tile_optimization": {
+    "batch1_probe": {"batch": 4, "batch_chunk": 1, "latency_ms": 104785.51175, "useful_tflops": 1.65965661755715, "peak_active_bytes": 2892410918},
+    "batch2_cache_retained_probe": {"batch": 4, "batch_chunk": 2, "latency_ms": 113656.549875, "useful_tflops": 1.5301183098665654, "peak_active_bytes": 5759610918},
+    "batch2_cache_cleared_probe": {"batch": 4, "batch_chunk": 2, "latency_ms": 138099.559291, "useful_tflops": 1.2592941562800022, "peak_active_bytes": 5759610918},
+    "decision": "retain batch-1 for Stage 3 input/output memory headroom; retain allocator cache between tiles"
+  },
+  "stage4_end_to_end_official_fp32": {
+    "status": "PASS complete exact-logical execution with official-style FP32 input stream",
+    "implementation": "shape14_end_to_end.py",
+    "command": ".venv/bin/python shape14_end_to_end.py --batch 32 --batch-chunk 1 --seq-len 100000 --input-dtype float32 --compute-dtype float16 --state-dtype float32 --output-dtype float32 --output-mode digest --log results/shape14_fp32_stage4_final.json",
+    "logical_batch": 32,
+    "batch_chunk": 1,
+    "seq_len": 100000,
+    "d_model": 1024,
+    "heads": 16,
+    "layers": 2,
+    "ffn_dim": 1024,
+    "input_dtype": "float32",
+    "compute_dtype": "float16",
+    "state_dtype": "float32",
+    "output_dtype": "float32",
+    "input_source": "persistent torch.Generator on MPS, tile-by-tile",
+    "sequence_execution": "forced-fused causal streaming/online-softmax attention",
+    "output_storage": "FP32 digest stream; no monolithic output tensor",
+    "latency_ms": 1169986.240208,
+    "model_latency_ms": 1078295.914001,
+    "input_generation_ms": 81034.49787500002,
+    "output_store_ms": 6370.313626,
+    "useful_tflops_end_to_end": 1.189128295861549,
+    "useful_tflops_model_only": 1.2902429898280312,
+    "peak_active_bytes": 4326031366,
+    "input_tile_bytes": 409600000,
+    "logical_input_bytes": 13107200000,
+    "logical_output_bytes": 13107200000,
+    "output_sha256": "4f637d5ebddb7ddf55de128dc1fba78840a967ce593c3c719d54a210b9f0a7dd",
+    "finite": true,
+    "full_reference_comparison": "not attempted because the exact full FP32 reference input/intermediates do not fit; reference-fit validation is recorded below",
+    "improvement_over_stage3": {
+      "latency_delta_ms": -15812.57975,
+      "latency_ratio": 0.9866650400693094,
+      "useful_tflops_delta": 0.015856,
+      "peak_active_bytes_delta": 1433620224,
+      "note": "Stage 4 uses official-style FP32 input/state and FP32 output digest with FP16 linear/attention compute; it is compared with Stage 3 only as a throughput/memory progression, not as a dtype-identical run."
+    }
+  },
+  "stage4_reference_fit_validation": [
+    {"batch": 1, "batch_chunk": 1, "seq_len": 1024, "seed": 1234, "failed_elements": 0, "max_abs_error": 0.007234096527099609, "correct": true},
+    {"batch": 4, "batch_chunk": 1, "seq_len": 1024, "seed": 1234, "failed_elements": 0, "max_abs_error": 0.007234096527099609, "correct": true},
+    {"batch": 8, "batch_chunk": 2, "seq_len": 2048, "seed": 1234, "failed_elements": 0, "max_abs_error": 0.0077724456787109375, "correct": true},
+    {"batch": 32, "batch_chunk": 2, "seq_len": 4096, "seed": 1234, "failed_elements": 0, "max_abs_error": 0.00916910171508789, "correct": true},
+    {"batch": 1, "batch_chunk": 1, "seq_len": 5000, "seed": 1234, "failed_elements": 0, "max_abs_error": 0.0020155906677246094, "correct": true},
+    {"batch": 1, "batch_chunk": 1, "seq_len": 5500, "seed": 1234, "failed_elements": 0, "max_abs_error": 0.0020155906677246094, "correct": true},
+    {"batch": 1, "batch_chunk": 1, "seq_len": 5900, "seed": 1234, "failed_elements": 0, "max_abs_error": 0.0020155906677246094, "correct": true}
+  ],
+  "stage4_reference_stability_boundary": {
+    "stable_repeat_cases": [5000, 5500, 5900],
+    "unstable_repeat_case": 6000,
+    "stable_repeat_max_abs_error": 0.0,
+    "unstable_repeat_max_abs_error": 0.5549782514572144,
+    "unstable_repeat_mean_abs_error": 0.06705746799707413,
+    "note": "At sequence 6000, two standalone FP32 reference forwards on the same MPS input disagree materially, so the explicit reference is no longer a trustworthy precision oracle at that boundary."
+  }
+}

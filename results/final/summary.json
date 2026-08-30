@@ -1,0 +1,877 @@
+{
+  "fresh_process": true,
+  "device": "mps",
+  "dtype": "float32",
+  "results": [
+    {
+      "shape": 1,
+      "config": {
+        "batch_size": 64,
+        "seq_len": 128,
+        "d_model": 128,
+        "num_heads": 4,
+        "ffn_dim": 128,
+        "num_layers": 4,
+        "causal": true
+      },
+      "implementation": "dispatch",
+      "device": "mps",
+      "dtype": "torch.float32",
+      "correct": true,
+      "accuracy": [
+        {
+          "passed": true,
+          "failed_elements": 0,
+          "total_elements": 1048576,
+          "max_abs_error": 0.000001430511474609375,
+          "max_relative_error": 0.2205323874950409,
+          "mean_abs_error": 1.1067380967233476e-7
+        },
+        {
+          "passed": true,
+          "failed_elements": 0,
+          "total_elements": 1048576,
+          "max_abs_error": 0.000001430511474609375,
+          "max_relative_error": 0.12162165343761444,
+          "mean_abs_error": 1.1044107850466389e-7
+        },
+        {
+          "passed": true,
+          "failed_elements": 0,
+          "total_elements": 1048576,
+          "max_abs_error": 0.000001430511474609375,
+          "max_relative_error": 0.03333334997296333,
+          "mean_abs_error": 1.1070059713347291e-7
+        },
+        {
+          "passed": true,
+          "failed_elements": 0,
+          "total_elements": 1048576,
+          "max_abs_error": 0.0000011920928955078125,
+          "max_relative_error": 0.08045977354049683,
+          "mean_abs_error": 1.108024747509262e-7
+        },
+        {
+          "passed": true,
+          "failed_elements": 0,
+          "total_elements": 1048576,
+          "max_abs_error": 0.0000011920928955078125,
+          "max_relative_error": 0.06382986903190613,
+          "mean_abs_error": 1.1097661456460628e-7
+        }
+      ],
+      "useful_flops": 7524581376,
+      "estimated_fp32_peak_tflops": 2.86,
+      "estimated_fp32_mfu": 0.3651,
+      "estimated_fp32_mfu_note": "Useful FP32 TFLOP/s divided by the published 2.86 TFLOP/s theoretical estimate; not an official Apple specification.",
+      "latency_ms": 7.206169567490851,
+      "useful_tflops": 1.0441859999999998,
+      "reference_latency_ms": 38.69713057742587,
+      "reference_speedup": 5.37,
+      "process_exit_code": 0,
+      "strong_sdpa_latency_ms": 20.994083,
+      "sdpa_speedup": 2.91334845834193,
+      "one_pass_tensor_traffic_proxy_gbps": 1.3853373704993206
+    },
+    {
+      "shape": 2,
+      "config": {
+        "batch_size": 1,
+        "seq_len": 128,
+        "d_model": 128,
+        "num_heads": 4,
+        "ffn_dim": 128,
+        "num_layers": 4,
+        "causal": true
+      },
+      "implementation": "dispatch",
+      "device": "mps",
+      "dtype": "torch.float32",
+      "correct": true,
+      "accuracy": [
+        {
+          "passed": true,
+          "failed_elements": 0,
+          "total_elements": 16384,
+          "max_abs_error": 0.0000010728836059570312,
+          "max_relative_error": 0.0006304173148237169,
+          "mean_abs_error": 1.5111791640265437e-7
+        },
+        {
+          "passed": true,
+          "failed_elements": 0,
+          "total_elements": 16384,
+          "max_abs_error": 0.0000011920928955078125,
+          "max_relative_error": 0.001252334681339562,
+          "mean_abs_error": 1.4699777750593057e-7
+        },
+        {
+          "passed": true,
+          "failed_elements": 0,
+          "total_elements": 16384,
+          "max_abs_error": 9.5367431640625e-7,
+          "max_relative_error": 0.004609070718288422,
+          "mean_abs_error": 1.4747588750196883e-7
+        },
+        {
+          "passed": true,
+          "failed_elements": 0,
+          "total_elements": 16384,
+          "max_abs_error": 9.5367431640625e-7,
+          "max_relative_error": 0.021257830783724785,
+          "mean_abs_error": 1.480678832876947e-7
+        },
+        {
+          "passed": true,
+          "failed_elements": 0,
+          "total_elements": 16384,
+          "max_abs_error": 0.0000011920928955078125,
+          "max_relative_error": 0.0019461618503555655,
+          "mean_abs_error": 1.510527880554946e-7
+        }
+      ],
+      "useful_flops": 117571584,
+      "estimated_fp32_peak_tflops": 2.86,
+      "estimated_fp32_mfu": 0.127,
+      "estimated_fp32_mfu_note": "Useful FP32 TFLOP/s divided by the published 2.86 TFLOP/s theoretical estimate; not an official Apple specification.",
+      "latency_ms": 0.32369248389405875,
+      "useful_tflops": 0.36321999999999993,
+      "reference_latency_ms": 2.8064138353614894,
+      "reference_speedup": 8.67,
+      "process_exit_code": 0,
+      "strong_sdpa_latency_ms": 2.58775,
+      "sdpa_speedup": 7.994470458099807,
+      "one_pass_tensor_traffic_proxy_gbps": 5.330491394927535
+    },
+    {
+      "shape": 3,
+      "config": {
+        "batch_size": 4,
+        "seq_len": 128,
+        "d_model": 128,
+        "num_heads": 4,
+        "ffn_dim": 128,
+        "num_layers": 4,
+        "causal": true
+      },
+      "implementation": "dispatch",
+      "device": "mps",
+      "dtype": "torch.float32",
+      "correct": true,
+      "accuracy": [
+        {
+          "passed": true,
+          "failed_elements": 0,
+          "total_elements": 65536,
+          "max_abs_error": 9.5367431640625e-7,
+          "max_relative_error": 0.09734518080949783,
+          "mean_abs_error": 1.333782222445734e-7
+        },
+        {
+          "passed": true,
+          "failed_elements": 0,
+          "total_elements": 65536,
+          "max_abs_error": 9.5367431640625e-7,
+          "max_relative_error": 0.0024989766534417868,
+          "mean_abs_error": 1.3372304863423778e-7
+        },
+        {
+          "passed": true,
+          "failed_elements": 0,
+          "total_elements": 65536,
+          "max_abs_error": 9.5367431640625e-7,
+          "max_relative_error": 0.006057179067283869,
+          "mean_abs_error": 1.336635193638358e-7
+        },
+        {
+          "passed": true,
+          "failed_elements": 0,
+          "total_elements": 65536,
+          "max_abs_error": 0.0000011920928955078125,
+          "max_relative_error": 0.0027956566773355007,
+          "mean_abs_error": 1.3406484811184782e-7
+        },
+        {
+          "passed": true,
+          "failed_elements": 0,
+          "total_elements": 65536,
+          "max_abs_error": 0.0000011920928955078125,
+          "max_relative_error": 0.004078297410160303,
+          "mean_abs_error": 1.3421110622857668e-7
+        }
+      ],
+      "useful_flops": 470286336,
+      "estimated_fp32_peak_tflops": 2.86,
+      "estimated_fp32_mfu": 0.1913,
+      "estimated_fp32_mfu_note": "Useful FP32 TFLOP/s divided by the published 2.86 TFLOP/s theoretical estimate; not an official Apple specification.",
+      "latency_ms": 0.859570213372618,
+      "useful_tflops": 0.547118,
+      "reference_latency_ms": 4.306446768996816,
+      "reference_speedup": 5.01,
+      "process_exit_code": 0,
+      "strong_sdpa_latency_ms": 8.698167,
+      "sdpa_speedup": 10.119204766149107,
+      "one_pass_tensor_traffic_proxy_gbps": 2.4647852694746377
+    },
+    {
+      "shape": 4,
+      "config": {
+        "batch_size": 16,
+        "seq_len": 128,
+        "d_model": 128,
+        "num_heads": 4,
+        "ffn_dim": 128,
+        "num_layers": 4,
+        "causal": true
+      },
+      "implementation": "dispatch",
+      "device": "mps",
+      "dtype": "torch.float32",
+      "correct": true,
+      "accuracy": [
+        {
+          "passed": true,
+          "failed_elements": 0,
+          "total_elements": 262144,
+          "max_abs_error": 0.0000011920928955078125,
+          "max_relative_error": 0.08849558979272842,
+          "mean_abs_error": 1.1116981113445945e-7
+        },
+        {
+          "passed": true,
+          "failed_elements": 0,
+          "total_elements": 262144,
+          "max_abs_error": 0.0000010728836059570312,
+          "max_relative_error": 0.029512664303183556,
+          "mean_abs_error": 1.1036722469270899e-7
+        },
+        {
+          "passed": true,
+          "failed_elements": 0,
+          "total_elements": 262144,
+          "max_abs_error": 0.0000011920928955078125,
+          "max_relative_error": 0.03333334997296333,
+          "mean_abs_error": 1.1075260886173055e-7
+        },
+        {
+          "passed": true,
+          "failed_elements": 0,
+          "total_elements": 262144,
+          "max_abs_error": 9.5367431640625e-7,
+          "max_relative_error": 0.07168455421924591,
+          "mean_abs_error": 1.1111758624338108e-7
+        },
+        {
+          "passed": true,
+          "failed_elements": 0,
+          "total_elements": 262144,
+          "max_abs_error": 9.5367431640625e-7,
+          "max_relative_error": 0.006572772283107042,
+          "mean_abs_error": 1.1135956867747154e-7
+        }
+      ],
+      "useful_flops": 1881145344,
+      "estimated_fp32_peak_tflops": 2.86,
+      "estimated_fp32_mfu": 0.29359999999999997,
+      "estimated_fp32_mfu_note": "Useful FP32 TFLOP/s divided by the published 2.86 TFLOP/s theoretical estimate; not an official Apple specification.",
+      "latency_ms": 2.240269507059698,
+      "useful_tflops": 0.839696,
+      "reference_latency_ms": 9.901991221203865,
+      "reference_speedup": 4.42,
+      "process_exit_code": 0,
+      "strong_sdpa_latency_ms": 6.444875,
+      "sdpa_speedup": 2.8768302115841187,
+      "one_pass_tensor_traffic_proxy_gbps": 1.6478017436594206
+    },
+    {
+      "shape": 5,
+      "config": {
+        "batch_size": 128,
+        "seq_len": 128,
+        "d_model": 128,
+        "num_heads": 4,
+        "ffn_dim": 128,
+        "num_layers": 4,
+        "causal": true
+      },
+      "implementation": "dispatch",
+      "device": "mps",
+      "dtype": "torch.float32",
+      "correct": true,
+      "accuracy": [
+        {
+          "passed": true,
+          "failed_elements": 0,
+          "total_elements": 2097152,
+          "max_abs_error": 0.000001430511474609375,
+          "max_relative_error": 0.2698412537574768,
+          "mean_abs_error": 1.1063171001524097e-7
+        },
+        {
+          "passed": true,
+          "failed_elements": 0,
+          "total_elements": 2097152,
+          "max_abs_error": 0.000001430511474609375,
+          "max_relative_error": 0.12162165343761444,
+          "mean_abs_error": 1.1066770611023458e-7
+        },
+        {
+          "passed": true,
+          "failed_elements": 0,
+          "total_elements": 2097152,
+          "max_abs_error": 0.000001430511474609375,
+          "max_relative_error": 0.7956988215446472,
+          "mean_abs_error": 1.1071319505617794e-7
+        },
+        {
+          "passed": true,
+          "failed_elements": 0,
+          "total_elements": 2097152,
+          "max_abs_error": 0.000001430511474609375,
+          "max_relative_error": 0.08045977354049683,
+          "mean_abs_error": 1.1086056161957458e-7
+        },
+        {
+          "passed": true,
+          "failed_elements": 0,
+          "total_elements": 2097152,
+          "max_abs_error": 0.0000011920928955078125,
+          "max_relative_error": 0.06382986903190613,
+          "mean_abs_error": 1.1097592533815259e-7
+        }
+      ],
+      "useful_flops": 15049162752,
+      "estimated_fp32_peak_tflops": 2.86,
+      "estimated_fp32_mfu": 0.4177,
+      "estimated_fp32_mfu_note": "Useful FP32 TFLOP/s divided by the published 2.86 TFLOP/s theoretical estimate; not an official Apple specification.",
+      "latency_ms": 12.597426426099636,
+      "useful_tflops": 1.194622,
+      "reference_latency_ms": 67.39623137963305,
+      "reference_speedup": 5.35,
+      "process_exit_code": 0,
+      "strong_sdpa_latency_ms": 41.732917,
+      "sdpa_speedup": 3.3128129181637282,
+      "one_pass_tensor_traffic_proxy_gbps": 1.4583600950379303
+    },
+    {
+      "shape": 6,
+      "config": {
+        "batch_size": 10000,
+        "seq_len": 128,
+        "d_model": 128,
+        "num_heads": 4,
+        "ffn_dim": 128,
+        "num_layers": 4,
+        "causal": true
+      },
+      "implementation": "dispatch",
+      "device": "mps",
+      "dtype": "torch.float32",
+      "correct": true,
+      "accuracy": [
+        {
+          "passed": true,
+          "failed_elements": 0,
+          "total_elements": 163840000,
+          "max_abs_error": 0.0000019073486328125,
+          "max_relative_error": 27356.958984375,
+          "mean_abs_error": 1.1073873315581295e-7
+        },
+        {
+          "passed": true,
+          "failed_elements": 0,
+          "total_elements": 163840000,
+          "max_abs_error": 0.0000019073486328125,
+          "max_relative_error": 53158.25,
+          "mean_abs_error": 1.1072325412442296e-7
+        }
+      ],
+      "useful_flops": 1175715840000,
+      "estimated_fp32_peak_tflops": 2.86,
+      "estimated_fp32_mfu": 0.35950000000000004,
+      "estimated_fp32_mfu_note": "Useful FP32 TFLOP/s divided by the published 2.86 TFLOP/s theoretical estimate; not an official Apple specification.",
+      "latency_ms": 1143.5033506132254,
+      "useful_tflops": 1.02817,
+      "reference_latency_ms": 5969.087490201036,
+      "reference_speedup": 5.22,
+      "process_exit_code": 0,
+      "strong_sdpa_latency_ms": 6884.04525,
+      "sdpa_speedup": 6.02013561771227,
+      "one_pass_tensor_traffic_proxy_gbps": 1.1476261676856883
+    },
+    {
+      "shape": 7,
+      "config": {
+        "batch_size": 64,
+        "seq_len": 128,
+        "d_model": 32,
+        "num_heads": 4,
+        "ffn_dim": 32,
+        "num_layers": 4,
+        "causal": true
+      },
+      "implementation": "dispatch",
+      "device": "mps",
+      "dtype": "torch.float32",
+      "correct": true,
+      "accuracy": [
+        {
+          "passed": true,
+          "failed_elements": 0,
+          "total_elements": 262144,
+          "max_abs_error": 0.001694321632385254,
+          "max_relative_error": 41.64442825317383,
+          "mean_abs_error": 0.0002048266469500959
+        },
+        {
+          "passed": true,
+          "failed_elements": 0,
+          "total_elements": 262144,
+          "max_abs_error": 0.0017609596252441406,
+          "max_relative_error": 174.8695526123047,
+          "mean_abs_error": 0.00020362585200928152
+        },
+        {
+          "passed": true,
+          "failed_elements": 0,
+          "total_elements": 262144,
+          "max_abs_error": 0.0016764998435974121,
+          "max_relative_error": 10.972838401794434,
+          "mean_abs_error": 0.00020457920618355274
+        },
+        {
+          "passed": true,
+          "failed_elements": 0,
+          "total_elements": 262144,
+          "max_abs_error": 0.0015066266059875488,
+          "max_relative_error": 16.954111099243164,
+          "mean_abs_error": 0.00020577755640260875
+        },
+        {
+          "passed": true,
+          "failed_elements": 0,
+          "total_elements": 262144,
+          "max_abs_error": 0.0017481669783592224,
+          "max_relative_error": 46.40169906616211,
+          "mean_abs_error": 0.00020582013530656695
+        }
+      ],
+      "useful_flops": 673185792,
+      "estimated_fp32_peak_tflops": 2.86,
+      "estimated_fp32_mfu": 0.0661,
+      "estimated_fp32_mfu_note": "Useful FP32 TFLOP/s divided by the published 2.86 TFLOP/s theoretical estimate; not an official Apple specification.",
+      "latency_ms": 3.5609628979190253,
+      "useful_tflops": 0.189046,
+      "reference_latency_ms": 19.62090556753383,
+      "reference_speedup": 5.51,
+      "process_exit_code": 0,
+      "strong_sdpa_latency_ms": 22.31325,
+      "sdpa_speedup": 6.266072025922971,
+      "one_pass_tensor_traffic_proxy_gbps": 0.6038097171011001
+    },
+    {
+      "shape": 8,
+      "config": {
+        "batch_size": 64,
+        "seq_len": 128,
+        "d_model": 1024,
+        "num_heads": 4,
+        "ffn_dim": 1024,
+        "num_layers": 4,
+        "causal": true
+      },
+      "implementation": "dispatch",
+      "device": "mps",
+      "dtype": "torch.float32",
+      "correct": true,
+      "accuracy": [
+        {
+          "passed": true,
+          "failed_elements": 0,
+          "total_elements": 8388608,
+          "max_abs_error": 0.0014937520027160645,
+          "max_relative_error": 1793.7979736328125,
+          "mean_abs_error": 0.00018210266716778278
+        },
+        {
+          "passed": true,
+          "failed_elements": 0,
+          "total_elements": 8388608,
+          "max_abs_error": 0.001688241958618164,
+          "max_relative_error": 1155.2755126953125,
+          "mean_abs_error": 0.00018238252960145473
+        },
+        {
+          "passed": true,
+          "failed_elements": 0,
+          "total_elements": 8388608,
+          "max_abs_error": 0.0015583634376525879,
+          "max_relative_error": 4167.99853515625,
+          "mean_abs_error": 0.00018219543562736362
+        },
+        {
+          "passed": true,
+          "failed_elements": 0,
+          "total_elements": 8388608,
+          "max_abs_error": 0.0015109777450561523,
+          "max_relative_error": 964.16796875,
+          "mean_abs_error": 0.0001822168123908341
+        },
+        {
+          "passed": true,
+          "failed_elements": 0,
+          "total_elements": 8388608,
+          "max_abs_error": 0.001566767692565918,
+          "max_relative_error": 7589.39404296875,
+          "mean_abs_error": 0.00018224242376163602
+        }
+      ],
+      "useful_flops": 420973903872,
+      "estimated_fp32_peak_tflops": 2.86,
+      "estimated_fp32_mfu": 0.7012,
+      "estimated_fp32_mfu_note": "Useful FP32 TFLOP/s divided by the published 2.86 TFLOP/s theoretical estimate; not an official Apple specification.",
+      "latency_ms": 209.91681785869577,
+      "useful_tflops": 2.0054320000000003,
+      "reference_latency_ms": 541.585390075435,
+      "reference_speedup": 2.58,
+      "process_exit_code": 0,
+      "strong_sdpa_latency_ms": 337.018833,
+      "sdpa_speedup": 1.6054875280496208,
+      "one_pass_tensor_traffic_proxy_gbps": 0.5600475140545295
+    },
+    {
+      "shape": 9,
+      "config": {
+        "batch_size": 64,
+        "seq_len": 128,
+        "d_model": 128,
+        "num_heads": 1,
+        "ffn_dim": 128,
+        "num_layers": 4,
+        "causal": true
+      },
+      "implementation": "dispatch",
+      "device": "mps",
+      "dtype": "torch.float32",
+      "correct": true,
+      "accuracy": [
+        {
+          "passed": true,
+          "failed_elements": 0,
+          "total_elements": 1048576,
+          "max_abs_error": 0.001443907618522644,
+          "max_relative_error": 67.10930633544922,
+          "mean_abs_error": 0.00019380265439394861
+        },
+        {
+          "passed": true,
+          "failed_elements": 0,
+          "total_elements": 1048576,
+          "max_abs_error": 0.001434922218322754,
+          "max_relative_error": 330.89141845703125,
+          "mean_abs_error": 0.00019309336494188756
+        },
+        {
+          "passed": true,
+          "failed_elements": 0,
+          "total_elements": 1048576,
+          "max_abs_error": 0.001521080732345581,
+          "max_relative_error": 1632.96533203125,
+          "mean_abs_error": 0.0001931815641000867
+        },
+        {
+          "passed": true,
+          "failed_elements": 0,
+          "total_elements": 1048576,
+          "max_abs_error": 0.0013748407363891602,
+          "max_relative_error": 132.03916931152344,
+          "mean_abs_error": 0.00019325553148519248
+        },
+        {
+          "passed": true,
+          "failed_elements": 0,
+          "total_elements": 1048576,
+          "max_abs_error": 0.0013158917427062988,
+          "max_relative_error": 297.92950439453125,
+          "mean_abs_error": 0.0001939442299772054
+        }
+      ],
+      "useful_flops": 7524581376,
+      "estimated_fp32_peak_tflops": 2.86,
+      "estimated_fp32_mfu": 0.37329999999999997,
+      "estimated_fp32_mfu_note": "Useful FP32 TFLOP/s divided by the published 2.86 TFLOP/s theoretical estimate; not an official Apple specification.",
+      "latency_ms": 7.047877066945913,
+      "useful_tflops": 1.0676379999999999,
+      "reference_latency_ms": 19.52261947544018,
+      "reference_speedup": 2.77,
+      "process_exit_code": 0,
+      "strong_sdpa_latency_ms": 18.25275,
+      "sdpa_speedup": 2.589822414128676,
+      "one_pass_tensor_traffic_proxy_gbps": 1.303995502858922
+    },
+    {
+      "shape": 10,
+      "config": {
+        "batch_size": 64,
+        "seq_len": 128,
+        "d_model": 128,
+        "num_heads": 2,
+        "ffn_dim": 128,
+        "num_layers": 4,
+        "causal": true
+      },
+      "implementation": "dispatch",
+      "device": "mps",
+      "dtype": "torch.float32",
+      "correct": true,
+      "accuracy": [
+        {
+          "passed": true,
+          "failed_elements": 0,
+          "total_elements": 1048576,
+          "max_abs_error": 0.001443907618522644,
+          "max_relative_error": 71.69855499267578,
+          "mean_abs_error": 0.0001934790489031002
+        },
+        {
+          "passed": true,
+          "failed_elements": 0,
+          "total_elements": 1048576,
+          "max_abs_error": 0.0013669133186340332,
+          "max_relative_error": 120.31671905517578,
+          "mean_abs_error": 0.00019321421859785914
+        },
+        {
+          "passed": true,
+          "failed_elements": 0,
+          "total_elements": 1048576,
+          "max_abs_error": 0.0014134645462036133,
+          "max_relative_error": 213.3031463623047,
+          "mean_abs_error": 0.0001933456223923713
+        },
+        {
+          "passed": true,
+          "failed_elements": 0,
+          "total_elements": 1048576,
+          "max_abs_error": 0.0014095306396484375,
+          "max_relative_error": 311.8220520019531,
+          "mean_abs_error": 0.00019325807807035744
+        },
+        {
+          "passed": true,
+          "failed_elements": 0,
+          "total_elements": 1048576,
+          "max_abs_error": 0.0014932453632354736,
+          "max_relative_error": 158.98956298828125,
+          "mean_abs_error": 0.0001941838563652709
+        }
+      ],
+      "useful_flops": 7524581376,
+      "estimated_fp32_peak_tflops": 2.86,
+      "estimated_fp32_mfu": 0.35450000000000004,
+      "estimated_fp32_mfu_note": "Useful FP32 TFLOP/s divided by the published 2.86 TFLOP/s theoretical estimate; not an official Apple specification.",
+      "latency_ms": 7.42164318502372,
+      "useful_tflops": 1.01387,
+      "reference_latency_ms": 31.764632831901526,
+      "reference_speedup": 4.28,
+      "process_exit_code": 0,
+      "strong_sdpa_latency_ms": 20.933125,
+      "sdpa_speedup": 2.8205512550430023,
+      "one_pass_tensor_traffic_proxy_gbps": 1.2383241515228716
+    },
+    {
+      "shape": 11,
+      "config": {
+        "batch_size": 64,
+        "seq_len": 128,
+        "d_model": 128,
+        "num_heads": 16,
+        "ffn_dim": 128,
+        "num_layers": 4,
+        "causal": true
+      },
+      "implementation": "dispatch",
+      "device": "mps",
+      "dtype": "torch.float32",
+      "correct": true,
+      "accuracy": [
+        {
+          "passed": true,
+          "failed_elements": 0,
+          "total_elements": 1048576,
+          "max_abs_error": 0.001443907618522644,
+          "max_relative_error": 67.6815185546875,
+          "mean_abs_error": 0.0001933649182319641
+        },
+        {
+          "passed": true,
+          "failed_elements": 0,
+          "total_elements": 1048576,
+          "max_abs_error": 0.0013434290885925293,
+          "max_relative_error": 767.6932983398438,
+          "mean_abs_error": 0.00019291724311187863
+        },
+        {
+          "passed": true,
+          "failed_elements": 0,
+          "total_elements": 1048576,
+          "max_abs_error": 0.0014134645462036133,
+          "max_relative_error": 104.99406433105469,
+          "mean_abs_error": 0.00019314413657411933
+        },
+        {
+          "passed": true,
+          "failed_elements": 0,
+          "total_elements": 1048576,
+          "max_abs_error": 0.0013748407363891602,
+          "max_relative_error": 7510.876953125,
+          "mean_abs_error": 0.00019338459242135286
+        },
+        {
+          "passed": true,
+          "failed_elements": 0,
+          "total_elements": 1048576,
+          "max_abs_error": 0.0015011616051197052,
+          "max_relative_error": 171.334716796875,
+          "mean_abs_error": 0.00019411277025938034
+        }
+      ],
+      "useful_flops": 7524581376,
+      "estimated_fp32_peak_tflops": 2.86,
+      "estimated_fp32_mfu": 0.3148,
+      "estimated_fp32_mfu_note": "Useful FP32 TFLOP/s divided by the published 2.86 TFLOP/s theoretical estimate; not an official Apple specification.",
+      "latency_ms": 8.357600092410767,
+      "useful_tflops": 0.9003279999999999,
+      "reference_latency_ms": 77.4749528566478,
+      "reference_speedup": 9.27,
+      "process_exit_code": 0,
+      "strong_sdpa_latency_ms": 79.679292,
+      "sdpa_speedup": 9.533752646570619,
+      "one_pass_tensor_traffic_proxy_gbps": 1.0996458191802536
+    },
+    {
+      "shape": 12,
+      "config": {
+        "batch_size": 64,
+        "seq_len": 32,
+        "d_model": 128,
+        "num_heads": 4,
+        "ffn_dim": 128,
+        "num_layers": 4,
+        "causal": true
+      },
+      "implementation": "dispatch",
+      "device": "mps",
+      "dtype": "torch.float32",
+      "correct": true,
+      "accuracy": [
+        {
+          "passed": true,
+          "failed_elements": 0,
+          "total_elements": 262144,
+          "max_abs_error": 0.001357942819595337,
+          "max_relative_error": 212.77459716796875,
+          "mean_abs_error": 0.00021043146261945367
+        },
+        {
+          "passed": true,
+          "failed_elements": 0,
+          "total_elements": 262144,
+          "max_abs_error": 0.0014325380325317383,
+          "max_relative_error": 14.274991989135742,
+          "mean_abs_error": 0.00020950046018697321
+        },
+        {
+          "passed": true,
+          "failed_elements": 0,
+          "total_elements": 262144,
+          "max_abs_error": 0.0014562606811523438,
+          "max_relative_error": 72.40199279785156,
+          "mean_abs_error": 0.00020912682521156967
+        },
+        {
+          "passed": true,
+          "failed_elements": 0,
+          "total_elements": 262144,
+          "max_abs_error": 0.001653432846069336,
+          "max_relative_error": 257.4496765136719,
+          "mean_abs_error": 0.00021028822811786085
+        },
+        {
+          "passed": true,
+          "failed_elements": 0,
+          "total_elements": 262144,
+          "max_abs_error": 0.0015090107917785645,
+          "max_relative_error": 40.1568603515625,
+          "mean_abs_error": 0.00021129089873284101
+        }
+      ],
+      "useful_flops": 1679818752,
+      "estimated_fp32_peak_tflops": 2.86,
+      "estimated_fp32_mfu": 0.3063,
+      "estimated_fp32_mfu_note": "Useful FP32 TFLOP/s divided by the published 2.86 TFLOP/s theoretical estimate; not an official Apple specification.",
+      "latency_ms": 1.9175619131113744,
+      "useful_tflops": 0.876018,
+      "reference_latency_ms": 6.845696029807606,
+      "reference_speedup": 3.57,
+      "process_exit_code": 0,
+      "strong_sdpa_latency_ms": 6.456125,
+      "sdpa_speedup": 3.3668404424681646,
+      "one_pass_tensor_traffic_proxy_gbps": 1.5117863888401217
+    },
+    {
+      "shape": 13,
+      "config": {
+        "batch_size": 64,
+        "seq_len": 1024,
+        "d_model": 128,
+        "num_heads": 4,
+        "ffn_dim": 128,
+        "num_layers": 4,
+        "causal": true
+      },
+      "implementation": "dispatch",
+      "device": "mps",
+      "dtype": "torch.float32",
+      "correct": true,
+      "accuracy": [
+        {
+          "passed": true,
+          "failed_elements": 0,
+          "total_elements": 8388608,
+          "max_abs_error": 0.000001430511474609375,
+          "max_relative_error": 0.8936169743537903,
+          "mean_abs_error": 1.1763468421577272e-7
+        },
+        {
+          "passed": true,
+          "failed_elements": 0,
+          "total_elements": 8388608,
+          "max_abs_error": 0.000001430511474609375,
+          "max_relative_error": 0.3807107210159302,
+          "mean_abs_error": 1.1768095475872542e-7
+        },
+        {
+          "passed": true,
+          "failed_elements": 0,
+          "total_elements": 8388608,
+          "max_abs_error": 0.000001430511474609375,
+          "max_relative_error": 0.4233333170413971,
+          "mean_abs_error": 1.1753096629263382e-7
+        }
+      ],
+      "useful_flops": 120326193152,
+      "estimated_fp32_peak_tflops": 2.86,
+      "estimated_fp32_mfu": 0.44020000000000004,
+      "estimated_fp32_mfu_note": "Useful FP32 TFLOP/s divided by the published 2.86 TFLOP/s theoretical estimate; not an official Apple specification.",
+      "latency_ms": 95.57495571942823,
+      "useful_tflops": 1.258972,
+      "reference_latency_ms": 683.3609333939119,
+      "reference_speedup": 7.15,
+      "process_exit_code": 0,
+      "strong_sdpa_latency_ms": 200.438208,
+      "sdpa_speedup": 2.0971833728954103,
+      "one_pass_tensor_traffic_proxy_gbps": 0.7188413688800087
+    }
+  ]
+}

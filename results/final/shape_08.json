@@ -1,0 +1,70 @@
+{
+  "shape": 8,
+  "config": {
+    "batch_size": 64,
+    "seq_len": 128,
+    "d_model": 1024,
+    "num_heads": 4,
+    "ffn_dim": 1024,
+    "num_layers": 4,
+    "causal": true
+  },
+  "implementation": "dispatch",
+  "device": "mps",
+  "dtype": "torch.float32",
+  "correct": true,
+  "accuracy": [
+    {
+      "passed": true,
+      "failed_elements": 0,
+      "total_elements": 8388608,
+      "max_abs_error": 0.0014937520027160645,
+      "max_relative_error": 1793.7979736328125,
+      "mean_abs_error": 0.00018210266716778278
+    },
+    {
+      "passed": true,
+      "failed_elements": 0,
+      "total_elements": 8388608,
+      "max_abs_error": 0.001688241958618164,
+      "max_relative_error": 1155.2755126953125,
+      "mean_abs_error": 0.00018238252960145473
+    },
+    {
+      "passed": true,
+      "failed_elements": 0,
+      "total_elements": 8388608,
+      "max_abs_error": 0.0015583634376525879,
+      "max_relative_error": 4167.99853515625,
+      "mean_abs_error": 0.00018219543562736362
+    },
+    {
+      "passed": true,
+      "failed_elements": 0,
+      "total_elements": 8388608,
+      "max_abs_error": 0.0015109777450561523,
+      "max_relative_error": 964.16796875,
+      "mean_abs_error": 0.0001822168123908341
+    },
+    {
+      "passed": true,
+      "failed_elements": 0,
+      "total_elements": 8388608,
+      "max_abs_error": 0.001566767692565918,
+      "max_relative_error": 7589.39404296875,
+      "mean_abs_error": 0.00018224242376163602
+    }
+  ],
+  "useful_flops": 420973903872,
+  "estimated_fp32_peak_tflops": 2.86,
+  "estimated_fp32_mfu": 0.7012,
+  "estimated_fp32_mfu_note": "Useful FP32 TFLOP/s divided by the published 2.86 TFLOP/s theoretical estimate; not an official Apple specification.",
+  "latency_ms": 209.91681785869577,
+  "useful_tflops": 2.0054320000000003,
+  "reference_latency_ms": 541.585390075435,
+  "reference_speedup": 2.58,
+  "process_exit_code": 0,
+  "strong_sdpa_latency_ms": 337.018833,
+  "sdpa_speedup": 1.6054875280496208,
+  "one_pass_tensor_traffic_proxy_gbps": 0.5600475140545295
+}

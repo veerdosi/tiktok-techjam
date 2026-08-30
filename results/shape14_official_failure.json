@@ -1,0 +1,22 @@
+{
+  "command": ".venv/bin/python shape14_interface_probe.py",
+  "source": "untouched challenge generate_random_case",
+  "results": [
+    {
+      "dtype": "torch.float32",
+      "required_input_bytes": 13107200000,
+      "required_input_gib": 12.20703125,
+      "status": "failed_in_generate_random_case",
+      "error": "Invalid buffer size: 12.21 GiB",
+      "participant_forward_called": false
+    },
+    {
+      "dtype": "torch.float16",
+      "required_input_bytes": 6553600000,
+      "required_input_gib": 6.103515625,
+      "status": "failed_in_generate_random_case",
+      "error": "Invalid buffer size: 6.10 GiB",
+      "participant_forward_called": false
+    }
+  ]
+}

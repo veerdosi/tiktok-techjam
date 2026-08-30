@@ -1,0 +1,46 @@
+{
+  "shape": 6,
+  "config": {
+    "batch_size": 10000,
+    "seq_len": 128,
+    "d_model": 128,
+    "num_heads": 4,
+    "ffn_dim": 128,
+    "num_layers": 4,
+    "causal": true
+  },
+  "implementation": "dispatch",
+  "device": "mps",
+  "dtype": "torch.float32",
+  "correct": true,
+  "accuracy": [
+    {
+      "passed": true,
+      "failed_elements": 0,
+      "total_elements": 163840000,
+      "max_abs_error": 0.0000019073486328125,
+      "max_relative_error": 27356.958984375,
+      "mean_abs_error": 1.1073873315581295e-7
+    },
+    {
+      "passed": true,
+      "failed_elements": 0,
+      "total_elements": 163840000,
+      "max_abs_error": 0.0000019073486328125,
+      "max_relative_error": 53158.25,
+      "mean_abs_error": 1.1072325412442296e-7
+    }
+  ],
+  "useful_flops": 1175715840000,
+  "estimated_fp32_peak_tflops": 2.86,
+  "estimated_fp32_mfu": 0.35950000000000004,
+  "estimated_fp32_mfu_note": "Useful FP32 TFLOP/s divided by the published 2.86 TFLOP/s theoretical estimate; not an official Apple specification.",
+  "latency_ms": 1143.5033506132254,
+  "useful_tflops": 1.02817,
+  "reference_latency_ms": 5969.087490201036,
+  "reference_speedup": 5.22,
+  "process_exit_code": 0,
+  "strong_sdpa_latency_ms": 6884.04525,
+  "sdpa_speedup": 6.02013561771227,
+  "one_pass_tensor_traffic_proxy_gbps": 1.1476261676856883
+}
