@@ -11,7 +11,7 @@ The code and the Codex agent ran on the following machine and software stack:
 | CPU                         | 8 cores: 4 performance + 4 efficiency               |
 | GPU                         | 8-core integrated Apple M2 GPU                      |
 | Unified memory              | 8 GiB (`hw.memsize=8589934592`)                     |
-| Workspace storage           | 228 GiB total, 15 GiB available when inspected      |
+| Workspace storage           | 228 GiB total                                       |
 | MPS recommended working set | 5,726,633,984 bytes (5.33 GiB)                      |
 | Metal `maxBufferLength`     | 4,294,967,296 bytes (4.00 GiB)                      |
 | Display/Metal report        | Metal 4                                             |
